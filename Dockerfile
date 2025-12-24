@@ -10,4 +10,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Render usa a porta via variável PORT
-CMD ["gunicorn", "-b", "0.0.0.0:$PORT", "app:app"]
+CMD ["sh", "-c", "gunicorn -b 0.0.0.0:${PORT} app:app"]
